@@ -8,4 +8,4 @@
 ## 二、框架
 
 1、截图 
-![image](https://github.com/xiayuanquan/XYQPlayer/XYQPlayerExample/blob/master/XYQPlayer/screenshot/framework.png)
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/framework.png)
