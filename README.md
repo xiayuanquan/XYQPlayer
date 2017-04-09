@@ -14,11 +14,19 @@
 2、文件
 
     XYQAllHeader.h：所有的头文件
+    
     XYQAudioTool.h/m：音频播放工具类，播放包括短音频和音乐
+    
     XYQAudioToolView.h/m：音频播放界面类，显示播放音乐的界面，播放、暂停、光盘旋转
+    
     XYQAudioToolLoader.h/m：音频下载类，缓存音乐到本地
+    
     XYQMovieTool.h/m：视频播放工具类，直接显示播放界面、还有截屏功能
+    
     XYQHUDView.h/m：弹框提示，包括文本提示、下载进度提示
+    
     XYQTimeProgress.h/m：音乐播放时间进度条
+    
     UIImage+XYQCornerRadius.h/m：对图片进行处理的类
+    
     Source.bundle：资源包，存放图片icon
