@@ -30,3 +30,7 @@
     UIImage+XYQCornerRadius.h/m：对图片进行处理的类
     
     Source.bundle：资源包，存放图片icon
+
+3、依赖
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/framework1.png)
