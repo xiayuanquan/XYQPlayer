@@ -35,16 +35,15 @@
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/framework1.png)
 
-# 三、音乐播放和缓存逻辑
+## 三、音乐播放和缓存逻辑
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music4.png)
 
-# 四、视频播放方式
+## 四、视频播放方式
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/movie.png)
 
-# 五、音频播放test
-
+## 五、音频播放test
 
     #import "PlayMusicViewController.h"    
     #import "XYQAllHeader.h"    
@@ -87,3 +86,33 @@
         [super viewWillDisappear:animated];
         [self.audioPlayerView dismissAudioPlayerView];
      }
+
+## 六、视频播放test
+
+    #import "PlayMovieViewController.h"
+    #import "XYQAllHeader.h"
+
+    @implementation PlayMovieViewController
+
+    - (void)viewDidLoad {
+       [super viewDidLoad];
+       self.view.backgroundColor = [UIColor whiteColor];
+    
+       //1、push视频
+       [XYQMovieTool pushPlayMovieWithNetURL:@"http://120.25.226.186:32812/resources/videos/minion_02.mp4" viewController:self];
+    }
+
+    -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+       //2、present视频
+       //[XYQMovieTool presentPlayMovieWithNetURL:@"http://120.25.226.186:32812/resources/videos/minion_02.mp4" viewController:self];
+    }
+
+    //关闭播放器
+    -(void)viewWillDisappear:(BOOL)animated{
+        [super viewWillDisappear:animated];
+         [XYQMovieTool cancelPlay];
+    }
+    @end
+    
+    
