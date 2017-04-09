@@ -1,0 +1,5 @@
+platform :ios
+
+target 'XYQPlayer' do
+
+end
