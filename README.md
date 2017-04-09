@@ -60,7 +60,6 @@
         self.view.backgroundColor = [UIColor whiteColor];
     
         //1、网络音乐
-        //(此处需要给正确的url，我的这个是没法用的，只是给一个参考样子)
         //[self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/xxx/minion_02.mp3"]];
  
         //2、本地音乐
