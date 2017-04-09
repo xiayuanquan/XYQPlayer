@@ -13,7 +13,7 @@
 
 2、文件
 
-    XYQAllHeader.h：所有的头文件
+    XYQAllHeader.h：所有的头文件
     
     XYQAudioTool.h/m：音频播放工具类，播放包括短音频和音乐
     
