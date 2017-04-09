@@ -53,10 +53,9 @@
     #import "XYQAllHeader.h"
     @interface PlayMusicViewController ()
     @property (strong,nonatomic)XYQAudioToolView *audioPlayerView;
-    @end
-    
-    @implementation PlayMusicViewController
+    @end
 
+    @implementation PlayMusicViewController
     - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
