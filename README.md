@@ -48,7 +48,7 @@
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/movie.png)
 
 ## 五、音频播放test
-
+        
     #import "PlayMusicViewController.h"    
     #import "XYQAllHeader.h"    
     @interface PlayMusicViewController ()
@@ -59,9 +59,8 @@
         [super viewDidLoad];
         self.view.backgroundColor = [UIColor whiteColor];     
  
-        //1、网络音乐
+        //1、网络音乐(此处需要给出正确的url，我的不可以用，只是给个样式)
         //[self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/xxx/minion_02.mp3"]];
-        
         //2、本地音乐
         [self testPlay_Bundle_Music:[self musicArray]];
      }
