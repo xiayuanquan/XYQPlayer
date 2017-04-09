@@ -150,7 +150,7 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     if (!bundleFileName)  return nil;
     
     //判断文件是否为MP3格式
-//    if (![bundleFileName hasSuffix:@".mp3"]) return nil;
+    if (![bundleFileName hasSuffix:@".mp3"]) return nil;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[bundleFileName];
@@ -214,7 +214,7 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     if (!URLOrLocalFileName)  return nil;
     
     //判断文件是否为MP3格式
-//    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return nil;
+    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return nil;
     
     //判断文件是否在本地存在
     if (!localFileName) {
@@ -288,7 +288,7 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     if (!bundleFileName)  return;
     
     //判断文件是否为MP3格式
-//    if (![bundleFileName hasSuffix:@".mp3"]) return;
+    if (![bundleFileName hasSuffix:@".mp3"]) return;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[bundleFileName];
@@ -310,7 +310,7 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     if (!URLOrLocalFileName)  return;
     
     //判断文件是否为MP3格式
-//    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return;
+    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[URLOrLocalFileName];
@@ -335,7 +335,7 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     if (!bundleFileName)  return;
     
     //判断文件是否为MP3格式
-//    if (![bundleFileName hasSuffix:@".mp3"]) return;
+    if (![bundleFileName hasSuffix:@".mp3"]) return;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[bundleFileName];
@@ -361,7 +361,7 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     if (!URLOrLocalFileName)  return;
     
     //判断文件是否为MP3格式
-//    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return;
+    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[URLOrLocalFileName];
