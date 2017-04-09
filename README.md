@@ -115,4 +115,30 @@
     }
     @end
     
-    
+    
+## 七、cocoaPods支持
+
+    pod  'XYQPlayer', '~> 1.0.0'
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/pod.png)
+
+
+## 八、演示截图
+
+### 1、音乐
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music1.png)
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music2.png)
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music3.png)
+
+### 2、视频
+
+#### push
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/push.png)
+
+#### present
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/present.png)
