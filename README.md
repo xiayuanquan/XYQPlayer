@@ -54,7 +54,8 @@
     @interface PlayMusicViewController ()
     @property (strong,nonatomic)XYQAudioToolView *audioPlayerView;
     @end
-    @implementation PlayMusicViewController
+    
+    @implementation PlayMusicViewController
 
     - (void)viewDidLoad {
     [super viewDidLoad];
