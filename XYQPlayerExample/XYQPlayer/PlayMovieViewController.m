@@ -19,14 +19,22 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //1、push视频
-    [XYQMovieTool pushPlayMovieWithNetURL:@"http://120.25.226.186:32812/resources/videos/minion_02.mp4" viewController:self];
+    //1、push网络视频
+    //[XYQMovieTool pushPlayMovieWithNetURL:@"http://120.25.226.186:32812/resources/videos/minion_02.mp4" viewController:self];
+    
+    //2、push本地视频
+    NSString *localMoive = [[NSBundle mainBundle] pathForResource:@"localmovie" ofType:@"mp4"];
+    [XYQMovieTool pushPlayMovieWithLocalURL:localMoive viewController:self];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    //2、present视频
+    //1、present网络视频
     //[XYQMovieTool presentPlayMovieWithNetURL:@"http://120.25.226.186:32812/resources/videos/minion_02.mp4" viewController:self];
+    
+    //2、push本地视频
+    NSString *localMoive = [[NSBundle mainBundle] pathForResource:@"localmovie" ofType:@"mp4"];
+    [XYQMovieTool presentPlayMovieWithNetURL:localMoive viewController:self];
 }
 
 //关闭播放器

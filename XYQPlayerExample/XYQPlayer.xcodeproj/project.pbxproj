@@ -25,6 +25,7 @@
 		B818AF4F1E6E7E17000A2929 /* XYQAudioToolLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AF4E1E6E7E17000A2929 /* XYQAudioToolLoader.m */; };
 		B85FDE3A1E704997001E66B2 /* UIImage+XYQCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B85FDE391E704997001E66B2 /* UIImage+XYQCornerRadius.m */; };
 		B86F2E361E718C5500957672 /* XYQHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = B86F2E351E718C5500957672 /* XYQHUDView.m */; };
+		B87D4C001EA5DB1500927070 /* localmovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B87D4BFF1EA5DB1500927070 /* localmovie.mp4 */; };
 		B892B7871E9A2E5C0077C47C /* framework.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B77D1E9A2E5C0077C47C /* framework.png */; };
 		B892B7881E9A2E5C0077C47C /* framework1.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B77E1E9A2E5C0077C47C /* framework1.png */; };
 		B892B7891E9A2E5C0077C47C /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B77F1E9A2E5C0077C47C /* movie.png */; };
@@ -98,6 +99,7 @@
 		B85FDE391E704997001E66B2 /* UIImage+XYQCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XYQCornerRadius.m"; sourceTree = "<group>"; };
 		B86F2E341E718C5500957672 /* XYQHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQHUDView.h; sourceTree = "<group>"; };
 		B86F2E351E718C5500957672 /* XYQHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQHUDView.m; sourceTree = "<group>"; };
+		B87D4BFF1EA5DB1500927070 /* localmovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = localmovie.mp4; sourceTree = "<group>"; };
 		B892B77D1E9A2E5C0077C47C /* framework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = framework.png; sourceTree = "<group>"; };
 		B892B77E1E9A2E5C0077C47C /* framework1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = framework1.png; sourceTree = "<group>"; };
 		B892B77F1E9A2E5C0077C47C /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 			path = XYQPlayer;
 			sourceTree = "<group>";
 		};
+		B87D4BFE1EA5DB1500927070 /* MP4 */ = {
+			isa = PBXGroup;
+			children = (
+				B87D4BFF1EA5DB1500927070 /* localmovie.mp4 */,
+			);
+			path = MP4;
+			sourceTree = "<group>";
+		};
 		B892B77C1E9A2E5C0077C47C /* screenshot */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 		B8CC5B2B1E7126160001924B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B87D4BFE1EA5DB1500927070 /* MP4 */,
 				B8CC5B371E7126160001924B /* MP3s */,
 				B8CC5B3D1E7126160001924B /* Musics.plist */,
 			);
@@ -418,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87D4C001EA5DB1500927070 /* localmovie.mp4 in Resources */,
 				B892B78D1E9A2E5C0077C47C /* music4.png in Resources */,
 				B892B78F1E9A2E5C0077C47C /* present.png in Resources */,
 				B892B7881E9A2E5C0077C47C /* framework1.png in Resources */,
