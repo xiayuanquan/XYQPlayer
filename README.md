@@ -25,7 +25,7 @@
     
     XYQAudioToolLoader.h/m：音频下载类，缓存音乐到本地
     
-    XYQCachesManager.h/.m：缓存管理类，计算缓存大小、清除缓存
+    XYQCachesManager.h/.m：缓存管理类，计算缓存大小、清除缓存
     
     XYQMovieTool.h/m：视频播放工具类，直接显示播放界面、还有截屏功能
     
