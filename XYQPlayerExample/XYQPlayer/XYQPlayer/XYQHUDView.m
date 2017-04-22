@@ -55,25 +55,85 @@ static UIView *containView;
     }];
 }
 
+#pragma mark - 显示文本弹框
++(void)showBigHud:(NSString *)message{
+    
+    //容器
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    containView = window;
+    
+    //存在就不再重创建
+    for (UIView *xyqview in containView.subviews) {
+        if ([xyqview isKindOfClass:[XYQHUDView class]]){
+            XYQHUDView *hud = (XYQHUDView *)xyqview;
+            hud.text = message;
+            return;
+        }
+    }
+    
+    //子视图
+    CGPoint point = CGPointMake(window.center.x, window.center.y);
+    XYQHUDView *hud = [[XYQHUDView alloc] initWithFrame:CGRectMake(point.x,point.y,0,0)];
+    hud.layer.cornerRadius = 5.0;
+    hud.text = message;
+    hud.textColor = [UIColor grayColor];
+    hud.textAlignment = NSTextAlignmentCenter;
+    hud.layer.masksToBounds = YES;
+    hud.backgroundColor = [UIColor whiteColor];
+    hud.font = [UIFont systemFontOfSize:14];
+    
+    //动画显示
+    [UIView animateWithDuration:.5f
+                          delay:.0f
+         usingSpringWithDamping:0.6f
+          initialSpringVelocity:1.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         hud.frame = CGRectMake(0, 0, 100, 100);
+                         hud.center = point;
+                         [containView addSubview:hud];
+                     }
+    completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [XYQHUDView hideHud];
+        });
+    }];
+}
+
 #pragma mark - 显示进度弹框
 +(void)showHudWithProgress:(CGFloat)progress inView:(UIView *)view{
     
+    
+    //容器
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    if (!view) {
+        containView = window;
+    }else{
+        containView = view;
+    }
+    
+
     //存在就不再重创建
-    containView = view;
-    for (UIView *xyqview in view.subviews) {
+    for (UIView *xyqview in containView.subviews) {
         if ([xyqview isKindOfClass:[XYQHUDView class]]){
             return;
         }
     }
     
     //容器
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
     CGPoint point = CGPointMake(window.center.x, window.center.y);
     XYQHUDView *hud = [[XYQHUDView alloc] initWithFrame:CGRectMake(point.x,point.y,0,0)];
     hud.center = point;
     hud.layer.cornerRadius = 10.0;
     hud.layer.masksToBounds = YES;
     hud.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.7];
+    
+    
+    //蒙版
+    UIView *coverView = [[UIView alloc] initWithFrame:window.bounds];
+    coverView.tag = 100;
+    coverView.backgroundColor = [UIColor clearColor];
+    
     
     //添加文本label
     UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, 110, 20)];
@@ -93,8 +153,9 @@ static UIView *containView;
                          hud.frame = CGRectMake(0, 0, 110, 110);
                          hud.center = point;
                          [hud creatAnimation:hud];//layer动画
-                         [view addSubview:hud];
-                         [view bringSubviewToFront:hud];
+                         [containView addSubview:coverView];
+                         [containView addSubview:hud];
+                         [containView bringSubviewToFront:hud];
      } completion:nil];
 }
 
@@ -113,9 +174,16 @@ static UIView *containView;
 #pragma mark - 关闭弹框
 +(void)hideHud{
     
+    if (!containView) {
+        return;
+    }
+    
     for (UIView *xyqview in containView.subviews) {
         if ([xyqview isKindOfClass:[XYQHUDView class]]){
             [xyqview.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+            [xyqview removeFromSuperview];
+        }
+        if (xyqview.tag == 100) {
             [xyqview removeFromSuperview];
         }
     }

@@ -9,6 +9,7 @@
 #import "XYQAudioTool.h"
 #import "XYQAudioToolLoader.h"
 #import "XYQAudioToolView.h"
+#import "XYQHUDView.h"
 
 @implementation XYQAudioTool
 
@@ -22,7 +23,6 @@
 static NSMutableDictionary *_soundDict;
 static NSMutableDictionary *_musicDict;
 static NSMutableDictionary *_caDisplayLinkDict;
-static NSString *localFileName;
 static NSString *playProgressRateNotification = @"playProgressRateNotification";
 
 
@@ -142,15 +142,11 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
 
 
 
-
 #pragma mark 播放音乐
 +(AVAudioPlayer *)playMusicFromBundleFileName:(NSString *)bundleFileName{
     
     //判断文件名是否为空
     if (!bundleFileName)  return nil;
-    
-    //判断文件是否为MP3格式
-    if (![bundleFileName hasSuffix:@".mp3"]) return nil;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[bundleFileName];
@@ -213,14 +209,13 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     //判断文件名是否为空
     if (!URLOrLocalFileName)  return nil;
     
-    //判断文件是否为MP3格式
-    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return nil;
-    
     //判断文件是否在本地存在
-    if (!localFileName) {
-        if ([URLOrLocalFileName hasPrefix:@"http"] || [URLOrLocalFileName hasPrefix:@"https"]) {
-            localFileName = [[XYQAudioToolLoader shareToolLoader] URLFileNameIsExsitesInLocalDocument:URLOrLocalFileName];
-            if (!localFileName) return nil;
+    NSString *localFileName = nil;
+    if ([URLOrLocalFileName hasPrefix:@"http"] || [URLOrLocalFileName hasPrefix:@"https"]) {
+        localFileName = [[XYQAudioToolLoader shareToolLoader] URLFileNameIsExsitesInLocalDocument:URLOrLocalFileName];
+        if (!localFileName)
+        {
+            return nil;
         }
     }
     
@@ -287,9 +282,6 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     //判断文件名是否为空
     if (!bundleFileName)  return;
     
-    //判断文件是否为MP3格式
-    if (![bundleFileName hasSuffix:@".mp3"]) return;
-    
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[bundleFileName];
     
@@ -308,9 +300,6 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     
     //判断文件名是否为空
     if (!URLOrLocalFileName)  return;
-    
-    //判断文件是否为MP3格式
-    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[URLOrLocalFileName];
@@ -334,9 +323,6 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     //判断文件名是否为空
     if (!bundleFileName)  return;
     
-    //判断文件是否为MP3格式
-    if (![bundleFileName hasSuffix:@".mp3"]) return;
-    
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[bundleFileName];
     
@@ -359,9 +345,6 @@ static NSString *playProgressRateNotification = @"playProgressRateNotification";
     
     //判断文件名是否为空
     if (!URLOrLocalFileName)  return;
-    
-    //判断文件是否为MP3格式
-    if (![URLOrLocalFileName hasSuffix:@".mp3"]) return;
     
     //从字典中取出播放器
     AVAudioPlayer *audioPlayer = _musicDict[URLOrLocalFileName];

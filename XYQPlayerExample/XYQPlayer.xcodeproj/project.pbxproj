@@ -23,6 +23,7 @@
 		B818AF491E6E778C000A2929 /* Source.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B818AF481E6E778C000A2929 /* Source.bundle */; };
 		B818AF4C1E6E7A66000A2929 /* XYQAudioToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AF4B1E6E7A66000A2929 /* XYQAudioToolView.m */; };
 		B818AF4F1E6E7E17000A2929 /* XYQAudioToolLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AF4E1E6E7E17000A2929 /* XYQAudioToolLoader.m */; };
+		B84D2A5F1EAB5E0300B0D25F /* XYQCachesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D2A5E1EAB5E0300B0D25F /* XYQCachesManager.m */; };
 		B85FDE3A1E704997001E66B2 /* UIImage+XYQCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B85FDE391E704997001E66B2 /* UIImage+XYQCornerRadius.m */; };
 		B86F2E361E718C5500957672 /* XYQHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = B86F2E351E718C5500957672 /* XYQHUDView.m */; };
 		B87D4C001EA5DB1500927070 /* localmovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B87D4BFF1EA5DB1500927070 /* localmovie.mp4 */; };
@@ -95,6 +96,8 @@
 		B818AF4B1E6E7A66000A2929 /* XYQAudioToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQAudioToolView.m; sourceTree = "<group>"; };
 		B818AF4D1E6E7E17000A2929 /* XYQAudioToolLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQAudioToolLoader.h; sourceTree = "<group>"; };
 		B818AF4E1E6E7E17000A2929 /* XYQAudioToolLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQAudioToolLoader.m; sourceTree = "<group>"; };
+		B84D2A5D1EAB5E0300B0D25F /* XYQCachesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQCachesManager.h; sourceTree = "<group>"; };
+		B84D2A5E1EAB5E0300B0D25F /* XYQCachesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQCachesManager.m; sourceTree = "<group>"; };
 		B85FDE381E704997001E66B2 /* UIImage+XYQCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XYQCornerRadius.h"; sourceTree = "<group>"; };
 		B85FDE391E704997001E66B2 /* UIImage+XYQCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XYQCornerRadius.m"; sourceTree = "<group>"; };
 		B86F2E341E718C5500957672 /* XYQHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQHUDView.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				B818AF4B1E6E7A66000A2929 /* XYQAudioToolView.m */,
 				B818AF4D1E6E7E17000A2929 /* XYQAudioToolLoader.h */,
 				B818AF4E1E6E7E17000A2929 /* XYQAudioToolLoader.m */,
+				B84D2A5D1EAB5E0300B0D25F /* XYQCachesManager.h */,
+				B84D2A5E1EAB5E0300B0D25F /* XYQCachesManager.m */,
 				B86F2E341E718C5500957672 /* XYQHUDView.h */,
 				B86F2E351E718C5500957672 /* XYQHUDView.m */,
 				B8A2DF491E97287E00A43DE1 /* XYQTimeProgress.h */,
@@ -532,6 +537,7 @@
 				B86F2E361E718C5500957672 /* XYQHUDView.m in Sources */,
 				B85FDE3A1E704997001E66B2 /* UIImage+XYQCornerRadius.m in Sources */,
 				B8B09C191E99DBB3009CBA83 /* PlayMovieViewController.m in Sources */,
+				B84D2A5F1EAB5E0300B0D25F /* XYQCachesManager.m in Sources */,
 				B818AF411E6E6433000A2929 /* XYQAudioTool.m in Sources */,
 				B818AF4C1E6E7A66000A2929 /* XYQAudioToolView.m in Sources */,
 			);

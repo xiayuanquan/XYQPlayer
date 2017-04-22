@@ -18,12 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     
     //1、网络音乐
     //[self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/xxx/minion_02.mp3"]];
+    [self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/resources/videos/minion_02.mp4"]];
     
     //2、本地音乐
-    [self testPlay_Bundle_Music:[self musicArray]];
+    //[self testPlay_Bundle_Music:[self musicArray]];
+    
 }
 
 //测试创建音乐播放器(播放沙盒本地音乐包括从网络音乐下载缓存)
@@ -46,6 +49,11 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Musics" ofType:@"plist"];
     NSArray *musicNameArr = [NSArray arrayWithContentsOfFile:path];
     return musicNameArr;
+}
+
+//清除缓存
+- (void)clearCache{
+    [XYQCachesManager clearFileCaches];
 }
 
 //关闭播放器

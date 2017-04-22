@@ -11,6 +11,7 @@
 #import "XYQAudioTool.h"
 #import "XYQHUDView.h"
 #import "XYQTimeProgress.h"
+#import "XYQCachesManager.h"
 
 static NSInteger currentIndex = 0; //当前音乐索引
 
@@ -88,6 +89,10 @@ static NSInteger currentIndex = 0; //当前音乐索引
     audioView.bgView.image = [UIImage imageNamed:@"Source.bundle/source/audiobook_bg_icon"];
     [controller.view addSubview:audioView.bgView];
     [controller.view addSubview:audioView];
+    
+    XYQCachesManager *xyaCachesManager = [XYQCachesManager sharedXYQCachesManager];
+    xyaCachesManager.filePaths = [musicArr copy];
+    
     return audioView;
 }
 

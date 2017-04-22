@@ -13,6 +13,7 @@
 #import "XYQMovieTool.h"
 #import "XYQAudioToolView.h"
 #import "XYQAudioToolLoader.h"
+#import "XYQCachesManager.h"
 #import "XYQHUDView.h"
 #import "XYQTimeProgress.h"
 #import "UIImage+XYQCornerRadius.h"

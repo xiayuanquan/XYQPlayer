@@ -22,6 +22,13 @@
 +(void)showHud:(NSString *)message;
 
 
+/**
+ 显示文本提示框
+ 
+ @param message 消息
+ */
++(void)showBigHud:(NSString *)message;
+
 
 /**
  显示进度提示框

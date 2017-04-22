@@ -9,6 +9,7 @@
 #import "XYQAudioToolLoader.h"
 #import "XYQAudioTool.h"
 #import "XYQHUDView.h"
+#import "XYQCachesManager.h"
 
 @interface XYQAudioToolLoader ()<NSURLSessionDelegate,NSURLSessionDownloadDelegate>
 @property (copy,nonatomic)NSString *localfileName;
@@ -26,21 +27,12 @@ static NSString *saveLocationPathNotification = @"saveLocationPathNotification";
     return [[self alloc] init];
 }
 
-
-#pragma mark - 获取沙盒目录
-- (NSArray<NSString*> *)documentsPath{
-    return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-}
-
-
 #pragma mark - 返回缓存路径
 - (NSString *)URLFileNameIsExsitesInLocalDocument:(NSString *)URLFileName{
     
     //这个可以查找Documents路径下的所有文件
     self.URLFileName = [URLFileName copy];
-    NSArray<NSString*> *documents = [self documentsPath];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray * tempFileList = [[NSArray alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:[documents lastObject] error:nil]];
+    NSArray * tempFileList = [[NSArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[XYQCachesManager documentsLastPath] error:nil]];
     
     //下载,并缓存到本地
     if (tempFileList.count==0) {
@@ -50,11 +42,13 @@ static NSString *saveLocationPathNotification = @"saveLocationPathNotification";
     
     NSString *URLFileNameLast = [URLFileName componentsSeparatedByString:@"/"].lastObject;
     [tempFileList enumerateObjectsUsingBlock:^(NSString *fileName, NSUInteger idx, BOOL * _Nonnull stop) {
+        
         //判断音乐是否在本地
         if (![URLFileNameLast isEqualToString:fileName] && idx==tempFileList.count-1) {
                 [self excuteLoadMusic:URLFileName]; //下载,并缓存到本地
-            }else{
-                self.localfileName = [[documents lastObject] stringByAppendingPathComponent:URLFileNameLast];
+            }
+        else{
+                self.localfileName = [[XYQCachesManager documentsLastPath] stringByAppendingPathComponent:URLFileNameLast];
                 *stop = YES;
             }
      }];
@@ -103,13 +97,12 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location{
     
-    NSArray<NSString*> *documents = [self documentsPath];
-    self.localfileName = [[documents lastObject] stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
-    NSError *error = nil;
-    [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:self.localfileName] error:&error];
+    self.localfileName = [[XYQCachesManager documentsLastPath] stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+    NSError *error = [XYQCachesManager writeFileFromURL:location toURL:[NSURL fileURLWithPath:self.localfileName]];
     if (error) {
         self.localfileName = nil;
     }else{
+        
         //发送缓存路径通知
         [[NSNotificationCenter defaultCenter] postNotificationName:saveLocationPathNotification object:self.localfileName];
     }

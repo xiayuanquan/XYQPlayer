@@ -41,7 +41,7 @@
 
 #pragma mark -  初始化
 +(instancetype)createProgressWithFrame:(CGRect)frame StartValue:(NSTimeInterval)startValue  endValue:(NSTimeInterval)endValue{
-    XYQTimeProgress *progress = [[self alloc] init];
+    XYQTimeProgress *progress = [[self alloc] initWithFrame:frame];
     progress.startValue = startValue;
     progress.endValue = endValue;
     return progress;
