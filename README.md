@@ -149,7 +149,7 @@
     
 ## 七、cocoaPods支持
 
-    pod search 'XYQPlayer'
+    pod search 'XYQPlayer'
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/pod.png)
 
@@ -164,7 +164,7 @@
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/muisc1.png)
 
-![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/muisc3.png)
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music3.png)
 
 ### 2、视频
 
