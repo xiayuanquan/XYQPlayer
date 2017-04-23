@@ -25,6 +25,8 @@
     
     XYQAudioToolLoader.h/m：音频下载类，缓存音乐到本地
     
+    XYQCachesManager.h/.m：缓存管理类，计算缓存大小、清除缓存
+    
     XYQMovieTool.h/m：视频播放工具类，直接显示播放界面、还有截屏功能
     
     XYQHUDView.h/m：弹框提示，包括文本提示、下载进度提示
@@ -59,6 +61,7 @@
     - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     
         //1、网络音乐(此处需要给出准确的url，我的这个不可以用，只是给个参考的样式)
         //[self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/xxx/minion_02.mp3"]];
@@ -86,6 +89,11 @@
         NSString *path = [[NSBundle mainBundle] pathForResource:@"Musics" ofType:@"plist"];
         NSArray *musicNameArr = [NSArray arrayWithContentsOfFile:path];
         return musicNameArr;
+    }
+    
+    //清除缓存
+    - (void)clearCache{
+        [XYQCachesManager clearFileCaches];
     }
 
     //关闭播放器
@@ -141,7 +149,7 @@
     
 ## 七、cocoaPods支持
 
-    pod  'XYQPlayer', '~> 1.0.0'
+    pod search 'XYQPlayer'
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/pod.png)
 
@@ -155,6 +163,8 @@
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music.png)
 
 ![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/muisc1.png)
+
+![image](https://github.com/xiayuanquan/XYQPlayer/blob/master/XYQPlayerExample/XYQPlayer/screenshot/music3.png)
 
 ### 2、视频
 
