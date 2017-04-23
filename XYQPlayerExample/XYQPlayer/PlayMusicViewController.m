@@ -22,10 +22,9 @@
     
     //1、网络音乐
     //[self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/xxx/minion_02.mp3"]];
-    [self testPlay_Local_URL_Music:@[@"http://120.25.226.186:32812/resources/videos/minion_02.mp4"]];
     
     //2、本地音乐
-    //[self testPlay_Bundle_Music:[self musicArray]];
+    [self testPlay_Bundle_Music:[self musicArray]];
     
 }
 

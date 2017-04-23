@@ -217,6 +217,11 @@ static NSInteger currentIndex = 0; //当前音乐索引
 #pragma mark - 播放或者暂停播放
 - (void)playOrPauseButtonPressed:(UIButton *)sender{
     
+    //不能为空
+    if (self.musicArr.count == 0) {
+        return;
+    }
+    
     //获取当前播放器
     [XYQAudioTool waitPlayingStateCallBack:^(AVAudioPlayer *audioPlayer) {
         NSLog(@"%@",audioPlayer);
@@ -234,6 +239,12 @@ static NSInteger currentIndex = 0; //当前音乐索引
 
 #pragma mark - 手动切换上一首
 - (void)preVButtonPressed:(UIButton *)sender{
+    
+    //不能为空
+    if (self.musicArr.count == 0) {
+        return;
+    }
+    
     if (self.musicArr.count==1 || currentIndex == 0) {
         [XYQHUDView showHud:@"已经是第一首"];
         return;
@@ -248,6 +259,12 @@ static NSInteger currentIndex = 0; //当前音乐索引
 
 #pragma mark - 手动切换下一首
 - (void)nextButtonPressed:(UIButton *)sender{
+    
+    //不能为空
+    if (self.musicArr.count == 0) {
+        return;
+    }
+    
     if (self.musicArr.count==1 || currentIndex == self.musicArr.count-1) {
         [XYQHUDView showHud:@"已经是最后一首"];
         return;
