@@ -35,8 +35,6 @@
 		B892B78C1E9A2E5C0077C47C /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B7821E9A2E5C0077C47C /* music.png */; };
 		B892B78D1E9A2E5C0077C47C /* music4.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B7831E9A2E5C0077C47C /* music4.png */; };
 		B892B78E1E9A2E5C0077C47C /* pod.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B7841E9A2E5C0077C47C /* pod.png */; };
-		B892B78F1E9A2E5C0077C47C /* present.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B7851E9A2E5C0077C47C /* present.png */; };
-		B892B7901E9A2E5C0077C47C /* push.png in Resources */ = {isa = PBXBuildFile; fileRef = B892B7861E9A2E5C0077C47C /* push.png */; };
 		B8A2DF4B1E97287E00A43DE1 /* XYQTimeProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A2DF4A1E97287E00A43DE1 /* XYQTimeProgress.m */; };
 		B8B09C161E99D601009CBA83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B09C151E99D601009CBA83 /* MediaPlayer.framework */; };
 		B8B09C191E99DBB3009CBA83 /* PlayMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B09C181E99DBB3009CBA83 /* PlayMovieViewController.m */; };
@@ -47,6 +45,8 @@
 		B8CC5B4B1E7126160001924B /* 瓦解.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8CC5B3B1E7126160001924B /* 瓦解.mp3 */; };
 		B8CC5B4C1E7126160001924B /* 简单爱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8CC5B3C1E7126160001924B /* 简单爱.mp3 */; };
 		B8CC5B4D1E7126160001924B /* Musics.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8CC5B3D1E7126160001924B /* Musics.plist */; };
+		B8EA70371F147602008DAECF /* present.png in Resources */ = {isa = PBXBuildFile; fileRef = B8EA70351F147602008DAECF /* present.png */; };
+		B8EA70381F147602008DAECF /* push.png in Resources */ = {isa = PBXBuildFile; fileRef = B8EA70361F147602008DAECF /* push.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +111,6 @@
 		B892B7821E9A2E5C0077C47C /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
 		B892B7831E9A2E5C0077C47C /* music4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music4.png; sourceTree = "<group>"; };
 		B892B7841E9A2E5C0077C47C /* pod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pod.png; sourceTree = "<group>"; };
-		B892B7851E9A2E5C0077C47C /* present.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = present.png; sourceTree = "<group>"; };
-		B892B7861E9A2E5C0077C47C /* push.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = push.png; sourceTree = "<group>"; };
 		B8A2DF491E97287E00A43DE1 /* XYQTimeProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQTimeProgress.h; sourceTree = "<group>"; };
 		B8A2DF4A1E97287E00A43DE1 /* XYQTimeProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQTimeProgress.m; sourceTree = "<group>"; };
 		B8B09C121E99D452009CBA83 /* XYQMovieTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQMovieTool.h; sourceTree = "<group>"; };
@@ -127,6 +125,8 @@
 		B8CC5B3B1E7126160001924B /* 瓦解.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "瓦解.mp3"; sourceTree = "<group>"; };
 		B8CC5B3C1E7126160001924B /* 简单爱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "简单爱.mp3"; sourceTree = "<group>"; };
 		B8CC5B3D1E7126160001924B /* Musics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Musics.plist; sourceTree = "<group>"; };
+		B8EA70351F147602008DAECF /* present.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = present.png; sourceTree = "<group>"; };
+		B8EA70361F147602008DAECF /* push.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = push.png; sourceTree = "<group>"; };
 		C6AD06BEA8F221589BCF9502 /* Pods-XYQPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYQPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYQPlayer/Pods-XYQPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +286,8 @@
 		B892B77C1E9A2E5C0077C47C /* screenshot */ = {
 			isa = PBXGroup;
 			children = (
+				B8EA70351F147602008DAECF /* present.png */,
+				B8EA70361F147602008DAECF /* push.png */,
 				B892B77D1E9A2E5C0077C47C /* framework.png */,
 				B892B77E1E9A2E5C0077C47C /* framework1.png */,
 				B892B77F1E9A2E5C0077C47C /* movie.png */,
@@ -294,8 +296,6 @@
 				B892B7821E9A2E5C0077C47C /* music.png */,
 				B892B7831E9A2E5C0077C47C /* music4.png */,
 				B892B7841E9A2E5C0077C47C /* pod.png */,
-				B892B7851E9A2E5C0077C47C /* present.png */,
-				B892B7861E9A2E5C0077C47C /* push.png */,
 			);
 			path = screenshot;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 			files = (
 				B87D4C001EA5DB1500927070 /* localmovie.mp4 in Resources */,
 				B892B78D1E9A2E5C0077C47C /* music4.png in Resources */,
-				B892B78F1E9A2E5C0077C47C /* present.png in Resources */,
+				B8EA70381F147602008DAECF /* push.png in Resources */,
 				B892B7881E9A2E5C0077C47C /* framework1.png in Resources */,
 				B8CC5B4A1E7126160001924B /* 最佳损友.mp3 in Resources */,
 				B892B78E1E9A2E5C0077C47C /* pod.png in Resources */,
@@ -446,7 +446,7 @@
 				B892B7891E9A2E5C0077C47C /* movie.png in Resources */,
 				B892B78A1E9A2E5C0077C47C /* muisc1.png in Resources */,
 				B8CC5B4D1E7126160001924B /* Musics.plist in Resources */,
-				B892B7901E9A2E5C0077C47C /* push.png in Resources */,
+				B8EA70371F147602008DAECF /* present.png in Resources */,
 				B818AF171E6E62EA000A2929 /* Assets.xcassets in Resources */,
 				B8CC5B4B1E7126160001924B /* 瓦解.mp3 in Resources */,
 				B8CC5B481E7126160001924B /* 一千年以后.mp3 in Resources */,

@@ -50,6 +50,9 @@
     //实例化
     XYQMovieTool *movieTool = [XYQMovieTool sharedManager];
     
+    //保证每次点击都重新创建视频播放控制器视图，避免再次点击时由于不播放的问题
+    movieTool.moviePlayer = nil;
+    
     //地址
     NSURL *url = [NSURL fileURLWithPath:localURL];
     
@@ -74,7 +77,7 @@
     XYQMovieTool *movieTool = [XYQMovieTool sharedManager];
     
     //保证每次点击都重新创建视频播放控制器视图，避免再次点击时由于不播放的问题
-    movieTool.moviePlayerViewController = nil;
+    movieTool.moviePlayer = nil;
     
     //地址
     netWorkURL = [netWorkURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -124,12 +127,18 @@
     //实例化
     XYQMovieTool *movieTool = [XYQMovieTool sharedManager];
     
+    //保证每次点击都重新创建视频播放控制器视图，避免再次点击时由于不播放的问题
+    movieTool.moviePlayerViewController = nil;
+    
     //地址
     netWorkURL = [netWorkURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:netWorkURL];
     
     //播放器
     movieTool.moviePlayerViewController = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
+    
+    //注册通知
+    [movieTool addNotifitionByPresent];
     
     //开始播放
     [containViewController presentMoviePlayerViewControllerAnimated:movieTool.moviePlayerViewController];
@@ -227,6 +236,11 @@
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 
+
+#pragma mark - dealloc
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end
 

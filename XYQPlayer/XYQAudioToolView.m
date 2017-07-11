@@ -86,7 +86,7 @@ static NSInteger currentIndex = 0; //当前音乐索引
     audioView.musicArr = musicArr;
     audioView.containViewController = controller;
     audioView.bgView = [[UIImageView alloc] initWithFrame:controller.view.bounds];
-    audioView.bgView.image = [UIImage imageNamed:@"audiobook_bg_icon"];
+    audioView.bgView.image = [UIImage imageNamed:@"Source.bundle/source/audiobook_bg_icon"];
     [controller.view addSubview:audioView.bgView];
     [controller.view addSubview:audioView];
     
@@ -102,8 +102,8 @@ static NSInteger currentIndex = 0; //当前音乐索引
     //播放、暂停
     self.playOrStopButton = [[UIButton alloc] init];
     [self.playOrStopButton addTarget:self action:@selector(playOrPauseButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.playOrStopButton setImage:[UIImage imageNamed:@"audiobook_start_blue_icon"] forState:UIControlStateNormal];
-    [self.playOrStopButton setImage:[UIImage imageNamed:@"audiobook_stop_blue_icon"] forState:UIControlStateSelected];
+    [self.playOrStopButton setImage:[UIImage imageNamed:@"Source.bundle/source/audiobook_start_blue_icon"] forState:UIControlStateNormal];
+    [self.playOrStopButton setImage:[UIImage imageNamed:@"Source.bundle/source/audiobook_stop_blue_icon"] forState:UIControlStateSelected];
     self.playOrStopButton.selected = NO;
     [self addSubview:self.playOrStopButton];
     
@@ -111,21 +111,21 @@ static NSInteger currentIndex = 0; //当前音乐索引
     //上一首
     self.preVButton = [[UIButton alloc] init];
     [self.preVButton addTarget:self action:@selector(preVButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.preVButton setImage:[UIImage imageNamed:@"audiobook_last_icon"] forState:UIControlStateNormal];
+    [self.preVButton setImage:[UIImage imageNamed:@"Source.bundle/source/audiobook_last_icon"] forState:UIControlStateNormal];
     [self addSubview:self.preVButton];
     
     
     //下一首
     self.nextButton = [[UIButton alloc]init];
     [self.nextButton addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.nextButton setImage:[UIImage imageNamed:@"audiobook_next_icon"] forState:UIControlStateNormal];
+    [self.nextButton setImage:[UIImage imageNamed:@"Source.bundle/source/audiobook_next_icon"] forState:UIControlStateNormal];
     [self addSubview:self.nextButton];
     
     
     //光盘
     self.lightDisk = [[UIImageView alloc]init];
     self.lightDisk.contentMode = UIViewContentModeScaleAspectFit;
-    self.lightDisk.image = [UIImage createRoundedRectImage:[UIImage imageNamed:@"audiobook_bg_icon"] size:CGSizeMake(180, 180) radius:90];
+    self.lightDisk.image = [UIImage createRoundedRectImage:[UIImage imageNamed:@"Source.bundle/source/audiobook_bg_icon"] size:CGSizeMake(180, 180) radius:90];
     [self addSubview:self.lightDisk];
     
     //进度条
@@ -216,7 +216,6 @@ static NSInteger currentIndex = 0; //当前音乐索引
 
 #pragma mark - 播放或者暂停播放
 - (void)playOrPauseButtonPressed:(UIButton *)sender{
-    
     
     //不能为空
     if (self.musicArr.count == 0) {

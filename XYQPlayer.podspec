@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "XYQPlayer"
-  s.version       = "1.1.1"
+  s.version       = "1.1.2"
   s.summary       = "A music and moive framework of XYQPlayer."
   s.homepage      = "https://github.com/xiayuanquan/XYQPlayer"
   s.license       = "MIT"
